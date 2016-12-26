@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.food.dao.inter.IShopDao" >
+  <resultMap id="BaseResultMap" type="com.food.dao.model.Shop" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="shop_hours" property="shopHours" jdbcType="VARCHAR" />
+    <result column="consumption_per_person" property="consumptionPerPerson" jdbcType="INTEGER" />
+    <result column="environmental_science" property="environmentalScience" jdbcType="REAL" />
+    <result column="service" property="service" jdbcType="REAL" />
+    <result column="lat" property="lat" jdbcType="DECIMAL" />
+    <result column="lng" property="lng" jdbcType="DECIMAL" />
+    <result column="flavor" property="flavor" jdbcType="REAL" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, address, shop_hours, consumption_per_person, environmental_science, service,
+    lat, lng, flavor, tel
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from shop
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByShopName" resultType="com.food.dao.model.Shop" parameterType="com.food.dao.model.Shop" >
+    select *
+    from shop a
+    where a.name = #{name,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from shop
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.food.dao.model.Shop" >
+    insert into shop (id, name, address, 
+      shop_hours, consumption_per_person, environmental_science,
+      service, lat, lng, flavor, 
+      tel)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{shopHours,jdbcType=VARCHAR}, #{consumptionPerPerson,jdbcType=INTEGER}, #{environmentalScience,jdbcType=REAL},
+      #{service,jdbcType=REAL}, #{lat,jdbcType=DECIMAL}, #{lng,jdbcType=DECIMAL}, #{flavor,jdbcType=REAL}, 
+      #{tel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.food.dao.model.Shop" >
+    insert into shop
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="shopHours != null" >
+        shopHours,
+      </if>
+      <if test="consumptionPerPerson != null" >
+        consumptionPerPerson,
+      </if>
+      <if test="environmentalScience != null" >
+        environmentalScience,
+      </if>
+      <if test="service != null" >
+        service,
+      </if>
+      <if test="lat != null" >
+        lat,
+      </if>
+      <if test="lng != null" >
+        lng,
+      </if>
+      <if test="flavor != null" >
+        flavor,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="shopHours != null" >
+        #{shopHours,jdbcType=VARCHAR},
+      </if>
+      <if test="consumptionPerPerson != null" >
+        #{consumptionPerPerson,jdbcType=INTEGER},
+      </if>
+      <if test="environmentalScience != null" >
+        #{environmentalScience,jdbcType=REAL},
+      </if>
+      <if test="service != null" >
+        #{service,jdbcType=REAL},
+      </if>
+      <if test="lat != null" >
+        #{lat,jdbcType=DECIMAL},
+      </if>
+      <if test="lng != null" >
+        #{lng,jdbcType=DECIMAL},
+      </if>
+      <if test="flavor != null" >
+        #{flavor,jdbcType=REAL},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.food.dao.model.Shop" >
+    update shop
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="shopHours != null" >
+        shopHours = #{shopHours,jdbcType=VARCHAR},
+      </if>
+      <if test="consumptionPerPerson != null" >
+        consumptionPerPerson = #{consumptionPerPerson,jdbcType=INTEGER},
+      </if>
+      <if test="environmentalScience != null" >
+        environmentalScience = #{environmentalScience,jdbcType=REAL},
+      </if>
+      <if test="service != null" >
+        service = #{service,jdbcType=REAL},
+      </if>
+      <if test="lat != null" >
+        lat = #{lat,jdbcType=DECIMAL},
+      </if>
+      <if test="lng != null" >
+        lng = #{lng,jdbcType=DECIMAL},
+      </if>
+      <if test="flavor != null" >
+        flavor = #{flavor,jdbcType=REAL},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.food.dao.model.Shop" >
+    update shop
+    set name = #{name,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      shop_hours = #{shopHours,jdbcType=VARCHAR},
+      consumption_per_person = #{consumptionPerPerson,jdbcType=INTEGER},
+      environmental_science = #{environmentalScience,jdbcType=REAL},
+      service = #{service,jdbcType=REAL},
+      lat = #{lat,jdbcType=DECIMAL},
+      lng = #{lng,jdbcType=DECIMAL},
+      flavor = #{flavor,jdbcType=REAL},
+      tel = #{tel,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,105 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.w_30{
+    width: 36px;
+}
+.s_6{
+    width: 70px;
+}
+.text_span{
+    cursor: pointer;
+    color: green;
+}
+.mt_6{
+    margin-top: 6px;
+}
+.sel_close{
+    float:right; height:20px; line-height:20px; width:10px; cursor:pointer;padding-right:5px;color:white;font-size: 17px;
+}
+.sel_supplier{
+    margin-top: 6px;
+}
+.product_tip{
+    color: #000000;
+    float: right;
+    font-size:12px;
+}
+.selected_product{
+    /*display: inline-block;*/
+    margin-right: 30px;
+    width: 435px;
+    margin-top: 6px;
+    float: left;
+    background-color: orange;
+    color: white;
+    height:20px; line-height:20px;
+}
+#div_conditions,#div_mainPrice,#div_subPrice,#div_selectedSubPrice,#div_expression,#div_linkLists{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+#div_mainPrice tr, #div_subPrice tr{
+    line-height: 25px;
+}
+
+/* 底卖价模式 */
+.prices_tit{ background:#edfce5; padding:15px 20px;}
+.mis_con .act_row .rp{ font-family:Arial, Helvetica, sans-serif; padding-left:110px;}
+.mis_con .act_row .pl5_ie{ *padding-left:5px; _padding-left:5px;}
+.mis_con .act_row .name{ width:65px;}
+.mis_con .act_row .name input{vertical-align: text-bottom; *vertical-align: middle; _vertical-align: middle;}
+.mis_con .act_row .prompt p{ color:#F00; font-size:12px;}
+.mis_con .act_row .condition .slt_wrap{ width:135px; }
+.mis_con .act_row .condition .slt_wrap .slt{  width:115px;}
+.mis_con .act_row .condition .slt_wrap .slt select{ width:140px;}
+.mis_con .act_row .condition1 .slt_wrap{ width:80px; }
+.mis_con .act_row .condition1 .slt_wrap .slt{  width:60px;}
+.mis_con .act_row .condition1 .slt_wrap .slt select{ width:85px;}
+.mis_con .default_table td{ font-size:12px;}
+.mis_con .default_table td.true{ color:#289913; position:relative; font-weight:bold;}
+.mis_con .default_table tr.lose { background:#ededed; cursor:default;}
+/*.mis_con .default_table tr.lose td{ color:#999;}*/
+.mis_con .default_table tr.lose:hover{ background:#ededed;}
+
+/* 以日历形式查看价格 */
+.calendar{ width:100%;}
+.calendar .calendar_tab{ width:93%; padding:0 30px; background-color:#ecfce4; position:relative;}
+/*.calendar .calendar_tab i.btn_l{ cursor:pointer; width:15px; height:16px; background-position:-12px -32px; position:absolute; top:100px; left:0; margin-left:4px; _background-position:-12px -16px;}*/
+.calendar .calendar_tab i.btn_l:hover{ width:15px; height:16px; background-position:-12px -16px; }
+/*.calendar .calendar_tab i.btn_r{  cursor:pointer; width:15px; height:16px; background-position:-27px -32px; position:absolute; top:100px; right:6px; _background-position:-27px -16px;}*/
+.calendar .calendar_tab i.btn_r:hover{ width:15px; height:16px; background-position:-27px -16px;}
+.calendar .calendar_tab .default_table{ border-top:0; font-family: Arial, Helvetica, sans-serif; }
+.calendar .calendar_tab .default_table th,.calendar_tab .default_table td{ border-top:1px solid #CCC; font-family: Arial, Helvetica, sans-serif; font-size:14px;}
+.calendar .calendar_tab .default_table th{ padding:4px 0;}
+.calendar .calendar_tab .default_table td{ background-color:#FFF;}
+.calendar .calendar_tab .default_table .no{ background: none;}
+.calendar .calendar_tab .default_table .gray{background-color:#ddd; color:#999; cursor:default;}
+.calendar ul li{ float:left; margin:10px 10px 0 0; font-size:12px;}
+.calendar ul li.jgwx{ width:30px; height:15px; background-color:#ddd; margin-left:30px;}
+
+/* 弹框*/ 
+.box{ width:445px; border:10px solid #565656; padding:40px 0 25px 0px; text-align:center; position:relative;}
+.box i.close{width:14px; height:14px; background-position:-39px 0; position:absolute; top:10px;	right:15px;	cursor:pointer;}
+.box h1{ font-size:18px; font-weight:bold; padding-bottom:20px; }
+.box textarea{ width:380px; height:110px; padding:10px;  font-size:12px; }
+.box .txt{ width:382px; padding:15px 10px 0 10px; background-color:#ecfce4; text-align:left; margin-bottom:25px;}
+.box .txt ul li{ font-size:12px; padding-bottom:15px;}
+
+/*批量维护房价*/
+.prices_tit b{ font-size:14px; font-family:"宋体";}
+.batch .default_table{border-top:0; }
+.batch .default_table td{ padding:0; text-align:left; vertical-align:top;}
+.batch .default_table label{ width:232px;  float:left;}
+.batch .default_table td input{ vertical-align: text-bottom; *vertical-align: middle; _vertical-align: middle;}
+.batch .default_table tr:hover{cursor: default;}
+.batch .default_table tr:hover{ background:none;}
+.batch .tit{background:#ecfce4; padding-left:10px; line-height:40px; _padding:10px 10px;}
+.batch .default_table td{ padding-bottom:10px;}
+.batch .default_table td label .con{ width:196px; line-height:20px;}
+.batch .default_table td label .inp{vertical-align:top; margin-top:6px; _margin-top:0px; }
+.biaoqian i{ width:93px; height:24px; background-position:0px -48px;}
+.biaoqian i em{ color:#FFF; line-height:24px; display:inline-block; width:90px; text-align:center;}
+.ml730{ margin-left:730px;}
+.wht_all{ width:100%}
+/*.alldc{display:inline-block;background:url(../pic/DC_icon.png) no-repeat;width:29px;height:16px;}*/
